@@ -1,0 +1,23 @@
+import wixLocation from 'wix-location';
+import {session} from 'wix-storage';
+import { getAuthUrl } from 'backend/OAuth.jsw';
+
+$w.onReady(function () {
+
+$w.onReady(function () {
+ $w('#button1').onClick((event) => {
+  googleSignin()
+ });
+})
+
+export function googleSignin() {
+ getAuthUrl()
+  .then((result) => {
+     const authorizationUrl = result.authUrl
+     const state = result.state
+     session.setItem("requestState", state);
+      wixLocation.to(authorizationUrl); 
+  })
+}
+
+console.log
