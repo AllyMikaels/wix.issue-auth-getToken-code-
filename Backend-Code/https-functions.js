@@ -8,7 +8,7 @@ export async function get_getAuth(request) {
 
  const googleClientSecret = await getSecret('Client1');
  const googleConfig = {
-  clientId: '967944416678-njio8l8bd2jpf88rj3a9g6balvjji150.apps.googleusercontent.com',
+  clientId: '(clientID).apps.googleusercontent.com',
   clientSecret: googleClientSecret,
   redirect: 'https://www.gbccs.org/_functions/getAuth'
  };
